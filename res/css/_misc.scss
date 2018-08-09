@@ -1,0 +1,141 @@
+// Miscellaneous mixins
+
+
+////
+/// This is a poster comment.
+/// It will apply annotations to all items from file.
+/// @group Misc mixin's
+/// @author Michael Koch
+////
+
+// Mixtend (mixin + extend) 
+// hack du allow include in mediaqueries
+// Use it this way: @include fullWidthRow1(false);
+// THE COMPILER IS NOT ALWAYS HAPPY WITH THIS
+// USE WITH CAUTION !!!!
+// this will give full width grid properties to row1
+@mixin fullWidthRow1($extend: true) {
+  @if $extend {
+    @extend %fullWidthR1;
+  } @else {
+    & {
+      grid-column: 1 / span all;
+      grid-row: 1 / 2;
+    }
+  }
+}
+
+%fullWidthR1 {
+  @include fullWidthRow1($extend: false);
+}
+
+// Same as above, but assigns row 2.
+@mixin fullWidthRow2($extend: true) {
+  @if $extend {
+    @extend %fullWidthR2;
+  } @else {
+    & {
+      grid-column: 1 / span all;
+      grid-row: 2 / 3;
+    }
+  }
+}
+
+%fullWidthrR2 {
+  @include fullWidthRow2($extend: false);
+}
+
+/// Mixtend (mixin + extend) 
+/// hack du allow includes in mediaqueries.
+/// Use it this way: "@include fullWidth(false);".
+/// THE COMPILER IS NOT ALWAYS HAPPY WITH THIS.
+/// USE WITH CAUTION !!!!
+/// spans all columns in a grid.
+/// @author Michael Koch
+/// @param {bool} $extend - Parse false to activate.
+@mixin fullWidth($extend: true) {
+  @if $extend {
+    @extend %fullWidth;
+  } @else {
+    & {
+      grid-column: 1 / span all;
+    }
+  }
+}
+
+/// Placeholder class to trick the compiler
+/// into allowing mixin in the mediaquery mixin's
+/// "@content" directives.
+/// @author Michael Koch
+%fullWidth {
+  @include fullWidth($extend: false);
+}
+
+
+%fade-out {
+  opacity: 0;
+  // transition: all $time ease-out;
+}
+
+%fade-in {
+  opacity: 1;
+}
+// adds transition, opacity and .fade-in class (as default)
+
+/// Hardware Acceleration.
+/// Mixin Forces the browser to switch to 3D renderer which is hardware accelerated,
+/// and handles 2D animations fine.
+/// @author Michael Koch
+@mixin ha {
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+// Math functions for typography and other length units
+@function devide($px, $root-size: 16, $unit: "rem"){
+  @return $px / $root-size#{$unit};
+}
+
+@function px2rem($px, $root-size: 16){
+  @return $px / $root-size+rem;
+}
+
+@function rem2px($rem, $root-size: 16){
+  @return $root-size * $rem+px;
+}
+
+@function px2rem2($px, $root-size: 16){
+  @return $px / $root-size+rem $px+px;
+}
+
+@function gfxt($time, $mp: 1, $unit: "s") {
+  @return $time * $mp#{$unit};
+}
+
+@mixin tsis($time, $mp: 1, $unit: "s", $ease: "ease-in-out", $all: "all") {
+  transition: #{$all} gfxt($time, $mp: 1, $unit: "s") #{$ease};
+}
+
+/// Mixin to center an element if the container height,
+/// is unknown.
+/// @author Michael Koch
+@mixin center-ab {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/// Mixin to box-size: border-box everything.
+/// @author Michael Koch
+@mixin box-all {
+  // html {
+  //   box-sizing: border-box;
+  // }
+  *, *:before, *:after {
+    box-sizing: border-box;
+    // box-sizing: inherit;
+  }
+}

@@ -1,0 +1,106 @@
+// /**************************************************
+// Generel variables for framework
+// ***************************************************/
+
+@import 'misc'; // Needed for px conversion 
+
+// Getting fonts
+
+// @import url('https://fonts.googleapis.com/css?family=Monofett|Seymour+One');
+
+//
+// SCSS VARS_____________________
+//
+// Fonts and fallbacks
+$h1-font: sans-serif;
+$h2-font: sans-serif;
+$p-font: sans-serif;
+$code-font: monospace;
+$logo-font1: 'Monofett', cursive;
+// $logo-font2: 'Sigmar One', cursive;
+$logo-font2: 'Seymour One', sans-serif;
+
+// Color Scheme.
+// more general naming convention is needed. (bg-color, )
+$tc-1: #1C1D21;
+$tc-2: #31353D;
+$tc-3: #445878;
+$tc-4: #92CDCF;
+$tc-5: #EEEFF7;
+
+
+
+$tc-grey: #D8D8D8;
+$tc-blue: #0075A8;
+$tc-dark-blue: #00418E;
+$tc-darker-blue: #002757;
+$tc-red: #EB8169;
+
+//Highlight color scheme
+$tc-hl-grey: #F8F8F8;
+$tc-hl-blue: #00B7E3;
+$tc-hl-dark-blue: #006BD0;
+$tc-hl-darker-blue: #004090;
+$tc-hl-red: #FFC4A8;
+
+// Standard text color
+$tc-txt: #121212;
+
+// // Widths for mediaqueries 
+// $tablet-width: px2rem(768);     // below is phone. 
+//                                 // between is tablet.
+// $desktop-width: px2rem(1024);   // above is desktop 
+
+// $mqBuffer: px2rem(1);           // buffer between mq's
+
+$gfx-t: 1; // Global animation time 1.5 = 150%. 0.3 = 30%. 1 = 100%.
+
+// Widths for mediaqueries
+$tablet-width: 650px;   // below is phone. 
+                        // between is tablet. N.B: Tablet is disabled for this project.
+$desktop-width: 1024px; // above is desktop 
+
+$mqBuffer: 1px; // buffer between mq's
+/*
+Root vars. STANDARD FONTS AND COLORS 
+*/
+// :root {
+//     /* FONTS AND FALLBACKS */
+//     --h1-font: $h1-font;
+//     --h2-font: $h2-font;
+//     --p-font: $p-font;
+//     --code-font: $code-font;
+//     /* COLOR SCHEME */
+//     --tc-grey: $tc-grey;
+//     --tc-blue: $tc-blue;
+//     --tc-dark-blue: $tc-dark-blue;
+//     --tc-darker-blue: $tc-darker-blue;
+//     --tc-red: $tc-red;
+
+//     /* Highlight COLOR SCHEME*/
+//     --tc-hl-grey: $tc-hl-grey;
+//     --tc-hl-blue: $tc-hl-blue;
+//     --tc-hl-dark-blue: $tc-hl-dark-blue;
+//     --tc-hl-darker-blue: $tc-hl-darker-blue;
+//     --tc-hl-red: $tc-hl-red;
+
+//     /* STANDARD FONT COLORS */
+//     --tc-txt: $tc-txt;
+
+//     // --main-font: 'Slabo 27px', serif;
+    
+//     /* Calculation */
+//     --responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 100px) / (1200 - 100))); /* Ranges from 421px to 1199px */
+// }
+
+// * {
+//     --sideMargin: 15px;
+// }
+
+// * {
+//     /* Typography */
+//     --main-font: 'Slabo 27px', serif;
+    
+//     /* Calculation */
+//     --responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 420px) / (1200 - 420))); /* Ranges from 421px to 1199px */
+//   }
